@@ -65,10 +65,10 @@
   должно моментально отображаться в span. То есть при печати в input'е тег span
   также должен меняться.
   */
-   const inputEl = document.querySelector('#from');
-   inputEl.addEventListener('input', (event) => {
-    document.querySelector('span').textContent = event.target.value
-   });
+  const inputEl = document.querySelector('#from');
+  inputEl.addEventListener('input', (event) => {
+    document.querySelector('span').textContent = event.target.value;
+  });
 
 
 
@@ -81,8 +81,8 @@
   const message = document.querySelector('.message' )
   const btnEl = document.querySelector('.messageBtn');
   btnEl.addEventListener('click', () => {
-  message.classList.add('animate__animated', 'animate__fadeInLeftBig');
-  message.style.visibility = 'visible'
+    message.classList.add('animate__animated', 'animate__fadeInLeftBig');
+    message.style.visibility = 'visible';
   });
 
   /*
@@ -100,12 +100,13 @@
   const inputEls = document.querySelectorAll('.form-control');
   function addClassError (element) {
     if (element.value === '') {
-        element.classList.add('error')
+        element.classList.add('error');
+        event.preventDefault();
     }
   }
   formEl.addEventListener('submit', (event) => {
     inputEls.forEach(el => addClassError(el));
-    event.preventDefault();
+    
   });
   inputEls.forEach(el => el.addEventListener('input', (event) => {
     if (event.target.value === '') {
